@@ -39,3 +39,11 @@ print("The first and last words of the text are", words[0], "and", words[-1])
 
 reversed_words = " ".join(words[::-1])
 print(f"Find below the text reversed:\n> {reversed_words}")
+
+
+#Find out whether the word "Python" is found in the text or not
+
+search_number = int(lower_text.find("python"))
+search_dict = {-1:"The word 'Python' is NOT found in the text" }
+found_dict = search_dict.get(search_number,"The word 'Python' IS found in the text")
+print(found_dict)
