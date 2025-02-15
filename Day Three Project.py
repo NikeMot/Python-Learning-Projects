@@ -24,3 +24,8 @@ print(f"'{letter3}' appears {text.count(letter3)} times in the text")
 input_words = input_text.split()
 total_words = tuple(input_words)
 print("The total number of characters in the text is", len(text), "and the total number of words is", len(input_words))
+
+#Print the first and last characters and words in the text
+
+print("The first and last characters of the text are", text[0], "and", text[-1])
+print("The first and last words of the text are", words[0], "and", words[-1])
