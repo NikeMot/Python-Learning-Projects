@@ -1,0 +1,7 @@
+from random import randint
+
+name = input("What is your name, player?")
+
+print(f"Hello {name} welcome to the game!/n I have thought of a number between 1 and 100./n You have 8 tries to get it right. Let's play!")
+
+secret_number = randint(1, 100)
