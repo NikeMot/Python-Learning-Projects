@@ -3,6 +3,6 @@
 
 a = input("What is your favourite colour? ")
 b = input("What is the name of your city ")
-print("Your canned water brand is called " + a + b)
+print("Your canned water brand is called " + a.capitalize() + " " + b.capitalize())
 
 
