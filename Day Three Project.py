@@ -41,7 +41,7 @@ print(f"Find below the text reversed:\n> {reversed_words}")
 print("\n")
 print("CHECK FOR THE WORD PYTHON")
 
-search_number = int(lower_text.find("python"))
+search_number = lower_text.find("python")
 search_dict = {-1:"The word 'Python' is NOT found in the text" }
 found_dict = search_dict.get(search_number,"The word 'Python' IS found in the text")
 print(found_dict)
