@@ -1,11 +1,19 @@
 from random import choice
 
-def rules():
+def letter_select():
 
-  word_list = ["yogurt","oblongate", "extrapolation", "anachronism", "molarity", "homophone", "indexing", "terracotta", "bauxite"]
+  word_list = ["yogurt", "oblongate", "extrapolation", 
+               "anachronism", "molarity", "homophone", 
+               "indexing", "terracotta", "bauxite"]
+  
   secret_word = choice(word_list)
-  selected_letter = input("Welcome to HANGMAN! You have 6 tries to guess the word I'm thinking".lower())
-  return selected_letter, secret_word
+  
+  while True:
+    selected_letter = input(Make sure to select only 1 letter at a time\n").lower()
+    
+    if len(selected_letter) == 1 and selected_letter.isalpha():
+      
+      return secret_word,selected_letter
 
 def dash_output(selected_letter,secret_word):
   dash_list = []
