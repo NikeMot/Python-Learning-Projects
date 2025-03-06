@@ -54,3 +54,10 @@ The program will ask for the user's name and then it will say something like: â€
 >3. If the user chose a number greater than the secret number, it will let them know that it was greater.
 >4. And if the user got the secret number right, they will be informed that they have won, and how many tries that has taken them.
 >5. If the user has not guessed correctly in their first attempt, they will be asked again to choose another number and so on until they win or until their eight attempts are done.*
+
+## Day Five
+
+The requirements for the fifth day, from "*Total Python: You Can Master Python Programming in 16 Days*" on Udemy can be seen below:
+
+>*Today you are going to program the hangman game. It's simple, popular, but if you don't know it, let me explain it really quickly: The program will choose a secret word and we'll show the player only a series of dashes that represent the number of letters in the word. In each turn, the player must choose a letter: if that letter is in the hidden word, the system will show where it is located, but if the player chooses a letter that is not in the hidden word, they lose a life.
+In the real hangman game, each time we lose a life, the drawing of the hangman is completed limb by limb. But in our case, as we still do not have the graphic elements, we will simply tell the user that they have six lives, and we will deduct them one by one for each time the player chooses an incorrect letter. *
