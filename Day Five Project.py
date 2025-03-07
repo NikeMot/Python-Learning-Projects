@@ -30,7 +30,7 @@ def dash_output(secret_word):
   
   return letter_list,dash_list,secret_word,on_screen_dash
 
-def correct_guess(letter_list,selected_letter,dash_list,on_screen_dash):
+def correct_guess(letter_list,selected_letter,dash_list,on_screen_dash,guessed_letters):
   #Checks whether the chosen letter is present 
   #in the secret word
   
@@ -41,6 +41,7 @@ def correct_guess(letter_list,selected_letter,dash_list,on_screen_dash):
   on_screen_dash = "  ".join(dash_list)
   print("You guessed correctly! " , on_screen_dash)
   print("\n")
+  guessed_letters.add(selected_letter)
   if dash_list == letter_list:
     print("You won! Well done!")
     print("\n")
@@ -75,6 +76,7 @@ def main_game(word_list):
 
    
   letter_list,dash_list,secret_word,on_screen_dash = dash_output(secret_word)
+  guessed_letters = set()
   
   while count < 6:
     selected_letter=letter_select(word_list)
@@ -85,9 +87,14 @@ def main_game(word_list):
       print(body_dict[count])
       print("\n")
       continue
+      
+    elif selected_letter in guessed_letters:
+      print("You guessed that already!")
+      print("\n")
         
     else:
-      correct_guess(letter_list,selected_letter,dash_list,on_screen_dash)
+      correct_guess(letter_list,selected_letter,dash_list,on_screen_dash,guessed_letters)
+      
       
   else:
     play_again()
