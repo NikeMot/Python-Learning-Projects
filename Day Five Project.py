@@ -6,7 +6,7 @@ word_list = ["yogurt", "oblongate", "extrapolation",
 
 
 def letter_select(word_list):
-  #Allows user to input their chosen letter
+  #Checks user only inputs 1 alphabetic character at a time
   
   while True:
     selected_letter = input("Make sure to select only 1 letter at a time\n").lower()
