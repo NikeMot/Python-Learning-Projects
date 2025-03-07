@@ -20,21 +20,22 @@ def dash_output(secret_word,selected_letter):
   print("Guess the word", dash_list)
   return letter_list,dash_list,secret_word,selected_letter
 
-def main_game():
-  
+def main_game(word_list):
+
   count = 0
-  dash_list = []
-  letter_list = []
   
-  secret_word,selected_letter=letter_select()
+  secret_word = choice(word_list)
   
-  
+  letter_list,dash_list,secret_word = dash_output(secret_word)
+
   body_dict = {1:"Incorrect, right leg gone", 
              2:"Nope, left leg gone", 
              3:"Wrong, body gone", 
              4:"Negative, right arm gone", 
              5:"Not at all, left arm gone", 
              6:"YOU LOST!! Head's gone :( "}
+  
+  print("Welcome to Hangman! You have 6 tries to get the secret word")
   
   while count < 6:
     letter_list,dash_list,secret_word,selected_letter = dash_output(secret_word,selected_letter)
