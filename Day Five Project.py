@@ -6,13 +6,17 @@ word_list = ["yogurt", "oblongate", "extrapolation",
 
 
 def letter_select(word_list):
-
+  #Allows user to input their chosen letter
+  
   while True:
     selected_letter = input("Make sure to select only 1 letter at a time\n").lower()
     if len(selected_letter) == 1 and selected_letter.isalpha():
       return selected_letter
 
-def dash_output(secret_word): 
+def dash_output(secret_word):
+  #Creates and print a dashed output corresponding 
+  #in length to the secret word
+  
   dash_list = []
   letter_list = []
 
@@ -22,10 +26,39 @@ def dash_output(secret_word):
   on_screen_dash = "  ".join(dash_list)
   
   print("Guess the word", on_screen_dash)
+  print("\n")
   
   return letter_list,dash_list,secret_word,on_screen_dash
 
+def correct_guess(letter_list,selected_letter,dash_list,on_screen_dash):
+  #Checks whether the chosen letter is present 
+  #in the secret word
+  
+  for index,number in enumerate(letter_list):
+        if selected_letter == letter_list[index]:
+          dash_list.pop(index)
+          dash_list.insert(index, selected_letter)
+  on_screen_dash = "  ".join(dash_list)
+  print("You guessed correctly! " , on_screen_dash)
+  print("\n")
+  if dash_list == letter_list:
+    print("You won! Well done!")
+    print("\n")
+    play_again()
+        
+def play_again():
+  #Asks whether you want to play again
+  
+  again = str(input("Press Y to play again\n"))
+  again.lower()
+  if again == "y":
+    main_game(word_list)
+  else:
+    print("Thank you for playing!")
+    return
+
 def main_game(word_list):
+  
   
   secret_word = choice(word_list)
   
@@ -39,13 +72,14 @@ def main_game(word_list):
              6:"YOU LOST!! Head's gone :( "}
   
   print("Welcome to Hangman! You have 6 tries to get the secret word")
+  print("\n")
 
    
   letter_list,dash_list,secret_word,on_screen_dash = dash_output(secret_word)
   
   while count < 6:
     selected_letter=letter_select(word_list)
-    print(on_screen_dash)
+    
     
     if str(letter_list).find(selected_letter) == -1:
       count += 1
@@ -54,24 +88,11 @@ def main_game(word_list):
       continue
         
     else:
-      for index,number in enumerate(letter_list):
-        if selected_letter == letter_list[index]:
-          dash_list.pop(index)
-          dash_list.insert(index, selected_letter)
-          on_screen_dash = "  ".join(dash_list)
-          print("You guessed correctly! " , on_screen_dash)
-          print("\n")
-                    
-          if dash_list == letter_list:
-            print("You won! Well done!")
-            print("\n")
-            return
+      correct_guess(letter_list,selected_letter,dash_list,on_screen_dash)
       
-      
-
   else:
-    print(body_dict[6])
-    return
+    play_again()
+    
 
 
 main_game(word_list)
