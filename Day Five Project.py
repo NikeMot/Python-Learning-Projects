@@ -1,17 +1,17 @@
 from random import choice
 
-def letter_select():
-  word_list = ["yogurt", "oblongate", "extrapolation", 
+word_list = ["yogurt", "oblongate", "extrapolation", 
              "anachronism", "molarity", "homophone", 
              "indexing", "terracotta", "bauxite"]
-  secret_word = choice(word_list)
+
+
+def letter_select(word_list):
+
   while True:
     selected_letter = input("Make sure to select only 1 letter at a time\n").lower()
-
-  if len(selected_letter) == 1 and selected_letter.isalpha():
-
-    return secret_word,selected_letter
-
+    if len(selected_letter) == 1 and selected_letter.isalpha():
+      return selected_letter
+      
 def dash_output(secret_word,selected_letter):
   
   for letter in secret_word:
