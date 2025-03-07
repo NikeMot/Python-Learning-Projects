@@ -49,8 +49,7 @@ def correct_guess(letter_list,selected_letter,dash_list,on_screen_dash):
 def play_again():
   #Asks whether you want to play again
   
-  again = str(input("Press Y to play again\n"))
-  again.lower()
+  again = str(input("Press Y to play again\n")).lower()
   if again == "y":
     main_game(word_list)
   else:
