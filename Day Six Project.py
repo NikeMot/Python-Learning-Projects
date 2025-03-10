@@ -1,4 +1,17 @@
 from pathlib import Path
+import os
+
+
+def import_recipe_book():
+    #Import the recipe book from a specific location
+    while True:
+        book_path = Path(input("Please, input the correct path of the recipe book\n"))
+        try:
+            os.chdir(book_path)
+            return book_path
+
+        except FileNotFoundError:
+            import_recipe_book()
 
 def display_categories():
     pass
