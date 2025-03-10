@@ -31,9 +31,13 @@ whatever you want. Then the program will ask the user to enter three random lett
 From that moment on, our code is going to process that information and result in five
 different types of analysis:*
 *>1. How many times each of those letters they have chosen appears.*
+>
 *>2. How many words are in the whole text?*
+>
 *>3. What are the first and last letters of the text?*
+>
 *>4. The system will show us how the text would look like if we inverted the order of the words.*
+>
 *>5. The system will tell us if the word “Python”*
 
 
