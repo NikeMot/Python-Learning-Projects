@@ -43,8 +43,11 @@ def modify_categories(book_path):
         else:
             print("Please make sure to select a,r or e ")
 
-def display_recipes():
-    pass
+def display_categories(category):
+    #Allows to display all the recipes in a specific category
+    recipes = [file.name for file in category.glob("*.txt")]
+    print(f"The available recipes in the chosen category are {recipes}")
+    return recipes
 
 def modify_recipes():
     pass
