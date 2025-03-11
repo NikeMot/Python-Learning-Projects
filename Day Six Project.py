@@ -49,8 +49,46 @@ def display_recipes(category):
     print(f"The available recipes in the chosen category are {recipes}")
     return recipes
 
-def modify_recipes():
-    pass
+def modify_recipes(category_path):
+    #Allows to delete or add categories to the recipe book
+    while True:
+        action = (input("""Would you like to (a) add, (r) remove or (v) view recipe?\n
+        You can also exit clicking (e)""")).lower()
+
+        if action == "a":
+            recipe_add = (input("What would you like to call the new recipe")).capitalize()
+            try:
+                new_recipe_path = (Path(category_path, recipe_add, ".txt"))
+                new_recipe_path.touch(exist_ok=False)
+                print(f"{recipe_add} has been added!")
+            except FileExistsError:
+                print("This recipe exists already!")
+
+        elif action == "r":
+            removed_recipe = (input("Which recipe would you like to remove?")).capitalize()
+            try:
+                removed_recipe_path = (Path(category_path, removed_recipe, ".txt"))
+                removed_recipe_path.unlink(missing_ok=False)
+                print(f"{removed_recipe} has been added!")
+
+            except FileNotFoundError:
+                print("This recipe does not exists!")
+
+        elif action == "v":
+            chosen_recipe = (input("""What recipe would you like to view?\n
+                    You can also exit clicking (e)""")).capitalize()
+            chosen_recipe_path = Path(category_path, chosen_recipe, ".txt")
+            try:
+                view_recipe = chosen_recipe_path.read_text()
+                print(view_recipe)
+            except FileNotFoundError:
+                print("Please, make sure you type the recipe's name correctly")
+
+        elif action == "e":
+            break
+
+        else:
+            print("Please make sure to select a, r, v or e ")
 
 
 def main():
