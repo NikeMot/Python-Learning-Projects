@@ -50,11 +50,25 @@ def modify_recipes():
     pass
 
 
-def main(book_path):
+def main():
+    book_path = import_recipe_book()
 
-    print(f"Welcome to the Nikenna Electronic Recipe book!\nThe recipe is currently stored in {book_path} \n")
-    return
+    print(f"""Welcome to the Electronic Recipe book!\n
+    I'm currently parsing {book_path} for all the recipes""")
+    print("\n")
 
-book_path = import_recipe_book()
-main(book_path)
+    categories = display_categories(book_path)
+
+    choice = input("""Would you like to (s) Select a category or (m) Modify the current categories?\n
+    You can also exit the program by pressing (e) """).lower()
+    if choice == "s":
+        pass
+    elif choice == "m":
+        modify_categories()
+    elif choice  == "e":
+        print("Closing the recipe book, thanks for using it!")
+        return
+
+
+main()
 
