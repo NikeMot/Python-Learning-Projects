@@ -20,8 +20,8 @@ def display_categories(book_path):
     print(f"The available categories are: {categories}")
     return categories
 
-def modify_categories(book_path,categories):
-    #Allows to delete or add categories to the recipe book
+def modify_categories(book_path):
+    #Allows user to delete or add categories to the recipe book
     while True:
         action = (input("""Would you like to add (a) or remove (r) a category?\n
         You can also exit by clicking (e)""")).lower()
