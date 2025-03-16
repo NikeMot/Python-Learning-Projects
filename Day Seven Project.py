@@ -17,13 +17,13 @@ class Customer(Person):
         return f"Your available balance is {self.balance}"
 
     def deposit(self, deposit_amount):
-        balance = balance + deposit_amount
-        print(f"Your have deposited {deposit_amount}. Your new balance is {self.balance}")
+        self.balance += deposit_amount
+        print(f"Your have deposited {deposit_amount}. Your new balance is £{self.balance}")
 
     def withdraw(self, withdraw_amount):
-        if balance >= withdraw_amount:
-            balance = balance - withdraw_amount
-            print(f"You have withdrawn £{withdraw_amount}. Your balance is now {self.balance}")
+        if self.balance >= withdraw_amount:
+            self.balance -= withdraw_amount
+            print(f"You have withdrawn £{withdraw_amount}. Your balance is now £{self.balance}")
         else:
             print("Your remaining balance is not enough to perform this operation")
 
@@ -45,24 +45,33 @@ def main():
     a - View your balance
     b - Withdraw funds
     c - Deposit funds
-    d - Exit""").lower()
-    while choice == "a" or choice == "b" or choice == "c" or choice == "d":
-        match choice:
-            case "a":
+    d - Exit\n""").lower()
+
+    while True:
+
+        if choice == "a":
                 print(new_customer)
-            case "b":
-                try:
-                    amount = int(input("Please, input the amount you would like to withdraw"))
-                    return new_customer.withdraw(amount)
-                except ValueError:
+
+        elif choice == "b":
+            try:
+                withdraw_amount = int(input("Please, input the amount you would like to withdraw\n"))
+                return new_customer.withdraw(withdraw_amount)
+            except ValueError:
                     print("Please, make sure to input the correct amount")
-            case "c":
-                return new_customer.deposit()
-            case "d":
-                break
+
+        elif choice =="c":
+            try:
+                deposit_amount = int(input("Please, input the amount you would like to deposit\n"))
+                return new_customer.deposit(deposit_amount)
+            except ValueError:
+                    print("Please, make sure to input the correct amount\n")
+            return new_customer.deposit()
+
+        elif choice == "d":
+            break
+
     else:
-        "Please make sure you choose one of the options above "
+        print("Please make sure you choose one of the options above ")
 
 main()
-
 
