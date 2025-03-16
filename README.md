@@ -93,6 +93,25 @@ Your code will first welcome the user, tell them the path to the directory where
 
 *4. Option 4 will delete recipes: it’ll do the same as option one, but instead of reading the recipe, it will delete it.*
 
+## Day Seven
+
+It's time to program with object-oriented programming principles in mind. I'm going to ask you to create a code that allows a person to perform operations on their bank account.
+Don't be scared, the instructions will be well defined so that you can do it quickly:
+
+*1. First, you are going to create a class called Person, and the person is going to have only two attributes: first name and last name. That's it.
+
+*2. Then, you are going to create a second class called Customer. This class will inherit from Person because customers are persons, but it will also have its own attributes such as account number and balance. For example, the bank account balance.*
+
+*3. But that's not all: the Customer will also have three methods:*
+   
+    a. The first one is going to be one of the special methods, and it is going to be the one that allows us to print our client. When the code asks to print the client, this method will allow their data to be displayed,         including their account balance.
+    b. Then, a method called deposit, which allows the user to decide how much money they want to add to their account.
+    c. And finally, a method called withdraw, which allows the user to take money and deduct it from their account.
+    d. Once you have created these two classes, you have to create the code for your program to run, asking the user to choose whether they want to make a deposit or withdrawal.
+   
+*The user can make as many transactions as they want until they decide to exit the program. Therefore, our code has to keep track of how much money is in the balance,
+and you must make sure that the customer never withdraws more money than they have.*
+
 *5. Option 5 will let the user delete a category, asking “Which category do you want to delete?”*
 
 *6. Option 6 will end the execution of the code (just end the program).*
