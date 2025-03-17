@@ -115,3 +115,38 @@ and you must make sure that the customer never withdraws more money than they ha
 *5. Option 5 will let the user delete a category, asking “Which category do you want to delete?”*
 
 *6. Option 6 will end the execution of the code (just end the program).*
+
+## Day Eght
+
+Now it's time to put it all into action in a new program. Today's challenge is for you to create a software that works like a ticket vending machine in a drugstore. 
+What's a ticket vending machine? 
+It's a machine you can find at the entrance of many stores or banks. 
+This machine asks you what procedure you've come to perform, and assigns you a turn number according to the area you want to go.
+
+In our case, you are going to create it for a drugstore where there are three areas of attention:perfumes, medicine and cosmetics. 
+Your program will ask the customer which of the areas they want to go, and it’ll give them a shift number depending on which area they go to.
+For example, if I choose cosmetics, it will give me the letter C (as in cosmetics), - (dash) 54.
+After this, it will ask us if we want to take another number to simulate that a new client is
+coming, and it will repeat the whole process.
+Some things to keep in mind:
+
+*1. Different customers will be taking different numbers for different areas (perfumes,
+medicine, cosmetics) in a different order, so the system must keep track of how many
+numbers it has given for each of those areas and produce the next number for each area
+as they ask for it. You probably already understand that we need to take advantage of
+generators and their efficiency to do this.*
+
+*2. The message where we tell the customer they're waiting number should have some
+additional text before and after the number. For example: “Your number is…” then the
+number itself with the letter at the beginning, and something like “Wait and someone
+will be with you shortly”. In order for our code not to repeat itself, instead of putting this
+text in each of the functions that calculate the numbers, we can take advantage of the
+decorators flexibility to create that additional text only once and then wrap any of our
+functions with that unique text.*
+
+*3. Finally, you should take advantage of the fact that you now know how to split your
+program into different modules and separate the code into two parts: on the one hand,
+a module that can be called numbers.py, where you write all the generators and the
+decorator, then a second module which we can call main.py, where you write the
+functions that manage the operation of the program (for example, instructions to choose
+an area and to decide if it will continue taking new clients or end the program).*
