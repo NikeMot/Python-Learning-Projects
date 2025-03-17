@@ -1,24 +1,39 @@
 '''
-This module contains the number tracker and
+This module contains the number trackers and their decorator
 '''
+def greeting(function):
+    def another_function():
+        following_iteration = next(function)
+        print(f"Your number is {following_iteration}\nPlease wait and someone will be with you shortly\n\n\n")
+        return following_iteration
+    return another_function()
 
-def number_tracker(CHOICE):
-    #Tracks each of the
 
-    PERFUME_COUNTER,MEDICINE_COUNTER,COSMETIC_COUNTER = 0
-    if CHOICE == "a":
-        while True:
-            PERFUME_COUNTER += 1
-            yield PERFUME_COUNTER
+def perfume_tracker():
+    #Tracks each of the perfume choices
+    PERFUME_COUNTER = 0
 
-    elif CHOICE == "b":
-        while True:
-            MEDICINE_COUNTER += 1
-            yield MEDICINE_COUNTER
+    while True:
+        PERFUME_COUNTER += 1
+        yield f"P - {PERFUME_COUNTER}"
 
-    else:
-        while True:
-            COSMETIC_COUNTER += 1
-            yield COSMETIC_COUNTER
 
+def medicine_tracker():
+    #Tracks each of the medicine choices
+
+    MEDICINE_COUNTER = 0
+
+    while True:
+        MEDICINE_COUNTER += 1
+        yield f"M - {MEDICINE_COUNTER}"
+
+
+def cosmetic_tracker():
+    #Tracks each of the cosmetic choices
+
+    COSMETIC_COUNTER = 0
+
+    while True:
+        COSMETIC_COUNTER += 1
+        yield f"C - {COSMETIC_COUNTER}"
 
