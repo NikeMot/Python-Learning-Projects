@@ -1,0 +1,24 @@
+'''
+This module contains the number tracker and
+'''
+
+def number_tracker(CHOICE):
+    #Tracks each of the
+
+    PERFUME_COUNTER,MEDICINE_COUNTER,COSMETIC_COUNTER = 0
+    if CHOICE == "a":
+        while True:
+            PERFUME_COUNTER += 1
+            yield PERFUME_COUNTER
+
+    elif CHOICE == "b":
+        while True:
+            MEDICINE_COUNTER += 1
+            yield MEDICINE_COUNTER
+
+    else:
+        while True:
+            COSMETIC_COUNTER += 1
+            yield COSMETIC_COUNTER
+
+
