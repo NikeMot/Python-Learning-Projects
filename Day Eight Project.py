@@ -4,15 +4,36 @@ This module assigns a number to a user based on what option they use
 
 import Day8Numbers
 
-def initial_choice():
-    #Asks user to choose one of the options
+perfume_gen = numbers.perfume_tracker()
+medicine_gen = numbers.medicine_tracker()
+cosmetic_gen = numbers.cosmetic_tracker()
+
+def main():
+    # Asks user to choose one of the options
     while True:
-        CHOICE = input("""What area did you come for today?\n
+        CHOICE = input("""Hello. What area did you come for today?\n
         \ta) Perfumes
         \tb) Medicine
-        \tc) Cosmetics\n\n""").lower
-        
-        if CHOICE == a or CHOICE == b or CHOICE == c:
-            return CHOICE
+        \tc) Cosmetics\n
+        You can also click E to exit\n\n""").lower()
+
+
+
+        if CHOICE == "a":
+            numbers.greeting(perfume_gen)
+
+        elif CHOICE == "b":
+            numbers.greeting(medicine_gen)
+
+        elif CHOICE == "c":
+            numbers.greeting(cosmetic_gen)
+
+        elif CHOICE == "e":
+            print("Goodbye!")
+            break
+
         else:
-            print("Please make sure to choose one of the corrept options")
+            print("Please make sure to choose one of the options")
+
+
+main()
