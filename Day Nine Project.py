@@ -10,12 +10,12 @@ This module searches through the file of a specific path for serial numbers
 and returns all the ones found in tabular form
 """
 
-file_serial_dict = dict()
-
 
 def search_folders():
     #Search each subfolder and file within for serial numbers
     #Add both file names and serial numbers to appropriate list which is returned
+
+    file_serial_dict = dict()
 
     path = Path("C:\\Users\\Niky\\Desktop\\Python\\Day9\\ProjectDay9")
     pattern = r'N\w{3}-\d{5}'
