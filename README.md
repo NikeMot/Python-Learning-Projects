@@ -192,3 +192,7 @@ IMPORTANT
 
 *Remember that in order to print everything in table format you can use the special characters to tabulate.*
 
+## Day Ten
+
+Create a space invaders clone
+
